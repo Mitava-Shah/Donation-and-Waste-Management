@@ -144,7 +144,7 @@ function Navbar() {
     <>
       {
         !DonorLogin ? <div className='p-0 m-0 box-border bg-blue-950 '>
-          <nav className=" container mx-auto">
+          <nav className="  mx-auto">
             <div className="flex flex-wrap items-center justify-between mx-[10px] p-[8px] sm:p-[10px] md:p-[12px] lg:p-[16px]">
               <img src={Logo} className="h-[32px] w-[3cm] sm:h-[36px] sm:w-[4cm] md:h-[40px] md:w-[4.5cm] lg:h-[48px] lg:w-[5cm] " alt="Logo" />
               <div className='flex'> 
@@ -180,43 +180,46 @@ function Navbar() {
                   </svg>
                 </button>
               </div>
-              <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-2 right-2 md:static md:top-auto z-10`}>
+              <div className={`items-center justify-between mx-2 w-[94%] md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'} absolute top-12 left-2  md:static md:top-auto z-10`}>
                 <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:bg-blue-950 dark:border-gray-700">
                   <li>
-                    <a href="#" className="block py-2 px-3 text-white font-sans font-normal bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                    <a href="#" onClick={() => {toggleMenu();}} className="block py-2 px-3 text-white font-sans font-normal bg-blue-950 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
                   </li>
                   <li>
-                    <a onClick={handleDonate} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Donate</a>
+                    <a onClick={() =>{handleDonate();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" >Donate</a>
                   </li>
                   <li>
-                    <Link to="/Gallery" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</Link>
+                    <Link to="/Gallery" onClick={() => {toggleMenu();}}  className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</Link>
                   </li>
                   <li>
-                    <a onClick={handleAboutus} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                    <a onClick={()=>{handleAboutus();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
                   </li>
                   <li>
-                    <a onClick={handleContactus} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                    <a  onClick={()=>{handleContactus();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
                   </li>
                   <li>
-                    <a href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={toggleLoginOptions}>Login/Signup</a>
+                    <a href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:text-white hover:hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={toggleLoginOptions}>Login/Signup</a>
                     <div className={`z-50 ${isLoginOptionsOpen ? 'block' : 'hidden'} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow dark:bg-gray-700 dark:divide-gray-600 absolute md:top-16 top-17 `}>
                       <ul className="py-2 px-2 font-normal font-sans " aria-labelledby="login-menu-button">
                         <li>
                           <a onClick={() => {
                             toggleDonorLoginPopup();
                             toggleLoginOptions();
+                             toggleMenu();
                           }} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Donor</a>
                         </li>
                         <li>
                           <a onClick={() => {
                             toggleAgentLoginPopup();
                             toggleLoginOptions();
+                             toggleMenu();
                           }} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Agent</a>
                         </li>
                         <li>
                           <a onClick={() => {
                             toggleAdminLoginPopup();
                             toggleLoginOptions();
+                             toggleMenu();
                           }} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin</a>
                         </li>
                       </ul>
@@ -228,7 +231,7 @@ function Navbar() {
             </div>
           </nav>
           <div className="bg-gray-200 py-1 ">
-            <div className=" px-[20px] container mx-auto ">
+            <div className=" px-[20px]  mx-auto ">
               <div className="flex flex-col lg:flex-row md:flex-row items-center justify-between">
                 <div className=" w-full lg:w-1/2 md:mb-0 sm:mb-4 mb-4 lg:mb-0 lg:ml-0  sm:text-center md:text-left lg:text-left text-center">
                   <p className="text-md text-gray-700  ">Contact No : <a className="hover:text-blue-700 " href="tel:+919726378756">+91 9726378756</a></p>
@@ -271,7 +274,7 @@ function Navbar() {
           </div>
         </div> :
           <div className='p-0 m-0 box-border bg-blue-950 '>
-            <nav className="container mx-auto">
+            <nav className=" mx-auto">
               <div className="flex flex-wrap items-center justify-between mx-[10px] p-[8px] sm:p-[10px] md:p-[12px] lg:p-[16px]">
                 <img src={Logo} className="h-[32px] w-[3cm] sm:h-[36px] sm:w-[4cm] md:h-[40px] md:w-[4.5cm] lg:h-[48px] lg:w-[5cm] " alt="Logo" />
                <div className='flex'>
@@ -322,43 +325,46 @@ function Navbar() {
                     </svg>
                   </button>
                 </div>
-                <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-2 right-2 md:static md:top-auto z-10`}>
+                <div className={`items-center justify-between w-full mx-8 md:flex md:w-auto md:order-1 ${isMenuOpen ? 'block' : 'hidden'} absolute top-16 left-2 right-2 md:static md:top-auto z-10`}>
                   <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:bg-blue-950 dark:border-gray-700">
                     <li>
-                      <a href="" className="block py-2 px-3 text-white font-sans font-normal bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                      <a href=""  onClick={() =>{toggleMenu();}} className="block py-2 px-3 text-white font-sans font-normal bg-blue-950 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
                     </li>
                     <li>
-                      <a onClick={handleDonate} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Donate</a>
+                      <a onClick={() =>{handleDonate();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Donate</a>
                     </li>
                     <li>
-                      <Link to="/Gallery" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</Link>
+                      <Link to="/Gallery" onClick={() =>{toggleMenu();}} className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</Link>
                     </li>
                     <li>
-                      <a onClick={handleAboutus} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                      <a  onClick={() =>{handleAboutus();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
                     </li>
                     <li>
-                      <a onClick={handleContactus} href="#" className="block py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+                      <a  onClick={() =>{handleContactus();toggleMenu();}} href="#" className="block py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-blue-950 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
                     </li>
                     <li>
-                      <a href="" className="hidden py-2 px-3 font-sans font-normal md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={toggleLoginOptions}>Login/Signup</a>
+                      <a href="" className="hidden py-2 px-3 font-sans font-normal hover:text-white md:text-gray-100 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:hover:bg-blue-950 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={toggleLoginOptions}>Login/Signup</a>
                       <div className={`z-50 ${isLoginOptionsOpen ? 'block' : 'hidden'} my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow dark:bg-gray-700 dark:divide-gray-600 absolute md:top-16 top-17 `}>
                         <ul className="py-2 px-2 font-normal font-sans " aria-labelledby="login-menu-button">
                           <li>
                             <a onClick={() => {
                               toggleDonorLoginPopup();
                               toggleLoginOptions();
+                               toggleMenu();
                             }} href="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Donor</a>
                           </li>
                           <li>
                             <a onClick={() => {
                               toggleAgentLoginPopup();
                               toggleLoginOptions();
+                               toggleMenu();
                             }} href="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Agent</a>
                           </li>
                           <li>
                             <a onClick={() => {
                               toggleAdminLoginPopup();
                               toggleLoginOptions();
+                               toggleMenu();
                             }} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin</a>
                           </li>
                         </ul>
@@ -370,7 +376,7 @@ function Navbar() {
               </div>
             </nav>
             <div className="bg-gray-200 py-1 ">
-              <div className=" px-[20px] container mx-auto ">
+              <div className=" px-[20px] mx-auto ">
                 <div className="flex flex-col lg:flex-row md:flex-row items-center justify-between">
                   <div className=" w-full lg:w-1/2 md:mb-0 sm:mb-4 mb-4 lg:mb-0 lg:ml-0  sm:text-center md:text-left lg:text-left text-center">
                     <p className="text-md text-gray-700  ">Contact No : <a className="hover:text-blue-700 " href="tel:+919726378756">+91 9726378756</a></p>
@@ -415,7 +421,7 @@ function Navbar() {
       {/* End Navbar */}
       {/* Video */}
       <div className='m-0 p-0 box-border font-[sans-serif] flex justify-center items-center bg-gray-300'>
-        <video src={Videobg} className='w-full h-[250px] sm:h-[300px] md:h-[450px] lg:h-[585px] object-cover container mx-auto my-8 ' autoPlay loop muted />
+        <video src={Videobg} className='w-full h-[250px] sm:h-[300px] md:h-[450px] lg:h-[585px] object-cover ' autoPlay loop muted />
         <div className='absolute w-full flex flex-col justify-center items-center text-center text-white '>
           <h1 className='text-2xl font-[500] sm:text-4xl sm:font-[500] md:text-5xl md:font-[500] lg:text-5xl lg:font-[500]  font-serif '>Alone we can do little,</h1>
           <h1 className='text-2xl font-[500] sm:text-4xl sm:font-[500] md:text-5xl md:font-[500] lg:text-5xl lg:font-[500]  font-serif'>together we can do so much.</h1>

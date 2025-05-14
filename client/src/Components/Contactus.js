@@ -14,7 +14,7 @@ const Contact = (props,ref) => {
       window.location.href = `mailto:${email}`;
     };
     return (
-      <div ref={ref} className="bg-white text-black m-4 container mx-auto">
+      <div ref={ref} className="bg-white text-black m-4  mx-4">
         <h1 className="text-3xl mb-5 font-serif font-semibold text-blue-950 border-l-8 border-blue-950 p-[10px] ">CONTACT US</h1>
         <div className="bg-white rounded-lg mb-5">
           <h2 className="text-xl mb-3 pl-[20px] font-semibold text-gray-600">Get in touch and let us know how we can help.</h2>

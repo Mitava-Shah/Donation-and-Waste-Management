@@ -101,8 +101,8 @@ function Box(props, ref) {
   }, []);
 
   return (
-    <div ref={ref} className='bg-gray-200 pt-[10px]'>
-      <div className='p-0 m-0 box-border grid items-center font-serif border-l-8 border-blue-950 container mx-auto'>
+    <div ref={ref} className='bg-gray-200 pt-[40px]'>
+      <div className='p-0 m-0 box-border grid items-center font-serif border-l-8 border-blue-950  mx-4'>
         <div className='box-content flex text-black mt-[10px] pl-[10px] h-[30px]    '>
           <p className='font-semibold  sm:text-[18px] text-[16px]'>YOU CAN DONATE</p>
           <div className='overflow-hidden'>
