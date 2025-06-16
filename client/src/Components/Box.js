@@ -103,21 +103,21 @@ function Box(props, ref) {
   return (
     <div ref={ref} className='bg-gray-200 pt-[40px]'>
       <div className='p-0 m-0 box-border grid items-center font-serif border-l-8 border-blue-950  mx-4'>
-        <div className='box-content flex text-black mt-[10px] pl-[10px] h-[30px]    '>
-          <p className='font-semibold  sm:text-[18px] text-[16px]'>YOU CAN DONATE</p>
+        <div className='box-content flex text-black mt-[10px] pl-[10px] h-[30px]'>
+          <p className='font-semibold  sm:text-[18px] text-[14px]'>YOU CAN DONATE</p>
           <div className='overflow-hidden'>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>UTENSILS</span>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>FOOD</span>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>STATIONARY</span>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>CLOTHES</span>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>FOOTWEAR</span>
-            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[16px]'>UTENSILS</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>UTENSILS</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>FOOD</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>STATIONARY</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>CLOTHES</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>FOOTWEAR</span>
+            <span className='block pl-[10px] h-[100%] animate-[Spin_8s_infinite] font-bold text-blue-900  sm:text-[20px] text-[14px]'>UTENSILS</span>
           </div>
         </div>
-        <p className='font-semibold  sm:text-[18px] text-[16px] ml-2'>YOU CAN ALSO GIVE WASTE <span className='text-blue-900 font-bold'>PLASIC/PAPER</span> TO US & WE WILL <span className='text-blue-900 font-bold'>RECYCLE</span> IT.</p>
+        <p className='font-semibold  sm:text-[18px] text-[14px] ml-2'>YOU CAN ALSO GIVE WASTE <span className='text-blue-900 font-bold'>PLASIC/PAPER</span> TO US & WE WILL <span className='text-blue-900 font-bold'>RECYCLE</span> IT.</p>
 
       </div>
-      <div class=" mx-[10rem] mt-[4rem] lg:gap-y-16 md:gap-x-4 sm:gap-10 gap-8 pb-8 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 justify-center ">
+      <div class=" mx-[10rem] mt-[2rem] lg:gap-y-16 md:gap-x-4 sm:gap-10 gap-8 pb-8 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 justify-center ">
         <div className=' bg-white lg:w-[7cm] lg:h-[6.5cm] md:w-[6cm] md:h-[6cm] sm:w-[6cm] sm:h-[6cm] w-[5.5cm] m-auto rounded-md shadow-lg '>
           <div className=' flex justify-center items-end h-[2.5cm]'>
             <img className='w-[1.5cm] h-[1.5cm]' src={Clothimg} alt="" />
@@ -197,8 +197,10 @@ function Box(props, ref) {
             <div className='text-center'>
               <p className='text-[20px] font-sans font-bold '>Recycle</p>
               <p className='font-sans text-gray-600 font-semibold'>Recycle paper, recycle plastic, keep our planet fantastic.</p>
-              <button onClick={toggleRecyclePopup} className='bg-blue-950 text-white px-[10px] py-[5px] my-[10px]  text-[15px] font-semibold rounded-sm font-sans hover:text-black hover:bg-gray-200'>Give Now</button>
-            </div>
+                {DonorLogin ? <button onClick={toggleStationeryPopup} className='bg-blue-950 text-white px-[10px] py-[5px] my-[10px]  text-[15px] font-semibold rounded-sm font-sans  hover:text-black hover:bg-gray-200'>Give now</button>
+                :
+                <button onClick={toggleAlertPopup} className='bg-blue-950 text-white px-[10px] py-[5px] my-[10px]  text-[15px] font-semibold rounded-sm font-sans  hover:text-black hover:bg-gray-200'>Give Now</button>}
+        </div>
           </div>
         </div>
       </div>

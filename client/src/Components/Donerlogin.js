@@ -69,7 +69,7 @@ function Donerlogin({ onClose }) {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center z-20">
             <div className="max-w-md w-full p-6 bg-gray-200 rounded-xl shadow-lg">
                 <button
                     className="relative left-[23.5rem] -top-2 text-gray-600 hover:text-gray-800"
